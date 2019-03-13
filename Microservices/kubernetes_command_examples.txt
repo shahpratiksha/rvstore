@@ -1,0 +1,68 @@
+  history | grep kube |
+  kubectl
+  kubectl --version
+  kubectl -f pod.yaml 
+  kubectl apply -f configmap.yaml 
+  kubectl apply -f deployment.yaml 
+  kubectl apply -f job.yaml ;
+  kubectl apply -f pod.yaml 
+  kubectl apply -f probe.yaml 
+  kubectl apply -f replicaset.yaml 
+  kubectl apply -f secret.yaml 
+  kubectl apply -f service.yaml 
+  kubectl apply deployment.yaml 
+  kubectl apply replicaset.yaml 
+  kubectl delete -f probe.yaml 
+  kubectl delete deployment.apps/mongodb-deployment
+  kubectl delete deployment/mongodb-deployment
+  kubectl delete deployment/nginx-deployment
+  kubectl delete mongodb-deployment
+  kubectl delete nginx-deployment
+  kubectl delete pod/nginx-pod
+  kubectl delete replicaset.apps/nginx-rs
+  kubectl delete service/nginx-service
+  kubectl deployment status
+  kubectl describe configmap
+  kubectl describe deploy/nginx-deployment
+  kubectl describe job.batch/hello-1552503540
+  kubectl describe nginx-deployment
+  kubectl describe pod/liveness-http
+  kubectl describe pod/mongodb-deployment-656555947f-49sfb
+  kubectl describe pod/nginx-pod
+  kubectl describe replicaset.apps/nginx-deployment-5545d7f54c
+  kubectl describe replicaset.apps/nginx-deployment-67ff45d9cd
+  kubectl describe secret
+  kubectl describe service myservice
+  kubectl describe service/nginx-service
+  kubectl describe svc nginx-service
+  kubectl describe svc nginx-service --output=wide
+  kubectl describe svc nginx-service -v
+  kubectl exec -it nginx-pod --
+  kubectl exec -it nginx-pod 00
+  kubectl get --output=wide all
+  kubectl get akk
+  kubectl get all
+  kubectl get all wide
+  kubectl get configmap
+  kubectl get jobs
+  kubectl get pod
+  kubectl get secrets
+  kubectl get wide
+  kubectl get wide all
+  kubectl help
+  kubectl help get
+  kubectl logs mypod
+  kubectl logs pod/hello-1552503540-gbxh7
+  kubectl logs pod/hello-1552503660-9lbhm
+  kubectl rollout -h
+  kubectl rollout help  deployment
+  kubectl rollout history deployment nginx-deployment
+  kubectl rollout status deployment nginx-deployment
+  kubectl rollout undo deployment nginx-deployment
+  kubectl run -f pod.yaml 
+  kubectl start -f pod.yaml 
+  kubectl stop pod/nginx-pod
+  kubectl update
+  kubectl version
+  ps -ef | grep kube
+  ps -ef | grep kubernetes

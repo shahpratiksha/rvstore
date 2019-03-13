@@ -1,0 +1,66 @@
+  ./docker-compose 
+  ./opt/docker
+  cd /Library/Containers/com.docker.docker/Data
+  cd /Library/Containers/com.docker.docker/Data/
+  cd /Users/pratiksha.shah/.docker/machine/machines
+  cd /Users/pratiksha.shah/.docker/machine/machines/default
+  cd /Users/pratiksha.shah/Library/Containers/com.docker.docker/Data
+  cd /opt/docker
+  cd /usr/local/bin/docker
+  cd /var/lib/docker
+  cd /var/lib/docker 
+  cd com.docker.docker/
+  cd docker
+  cd docker 
+  cd docker-c
+  cd ~/Library/Containers/com.docker.docker/Data
+  cd ~/VirtualBox VMs/boot2docker-vm
+  com.docker.docker/
+  docker
+  docker diff cocky_hoover
+  docker exec -it cocky_hoover bash
+  docker exec -it cocky_hoover ping
+  docker exec -it nginx bash
+  docker history a5e18ff4fa3b
+  docker image inspect mongo
+  docker image ls
+  docker images
+  docker info
+  docker kill test_jenkins_myfirstcontainer
+  docker logs flamboyant_liskov
+  docker ls
+  docker network connect my_first_network test_jenkins_myfirstcontainer
+  docker network create my_first_network
+  docker network help
+  docker network inspect my_first_network
+  docker network ls
+  docker network ls my_first_network
+  docker ps
+  docker ps | grep nginx
+  docker ps | nginx
+  docker pull jenkins
+  docker pull jenkins/jenkins
+  docker pull vergeops/versioned-nginx
+  docker pull vergeops/versioned-nginx:liveness
+  docker rename cocky_hoover test_jenkins_myfirstcontainer
+  docker restart test_jenkins_myfirstcontainer
+  docker run -d -p 8080:8080
+  docker run -p 8080:8080 -p
+  docker run hello-world
+  docker run jenkins
+  docker stats
+  docker stop
+  docker stop 892bf00f4825
+  docker stop f367eb4d1c7b
+  docker volume ls
+  docker volume prune
+  find . -name docker 
+  gulp start-docker
+  gulp stop-docker
+  history | grep docker |
+  ps -ef | grep -i
+  ps -ef | grep docker
+  screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tt
+  screen ~/Library/Containers/com.docker.docker/Data/vms/0/Docker.qcow2 
+  sudo cd /opt/docker
+  which docker
