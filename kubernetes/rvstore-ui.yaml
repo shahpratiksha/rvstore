@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: rvstore-ui
+ labels:
+  app: rvstore-ui
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: rvstore-ui
+ template:
+  metadata:
+   labels:
+    app: rvstore-ui
+  spec:
+    containers:
+    - name: rvstore-ui
+      image: "vergeops/k8s-rvstore-ui:1.0"
+---
+kind: Service
+apiVersion: v1 
+metadata:
+    name: rvstore-ui-service
+spec:
+    selector:
+        app: rvstore-ui
+    ports:
+    - protocol: TCP
+      port: 80
+      nodePort: 30080
+    type: NodePort

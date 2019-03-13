@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rvstore-product-api-config
+  namespace: default
+data:
+  SPRING_PROFILES_ACTIVE: compose
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-product-api 
+  labels:
+    app: rvstore-product-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-product-api
+  template:
+    metadata:
+      labels:
+        app: rvstore-product-api
+    spec:
+      containers:
+      - name: rvstore-product-api
+        image: rvstore-product-api
+        envFrom:
+        - configMapRef:
+            name: rvstore-product-api-config
+        ports:
+        - containerPort: 9001
