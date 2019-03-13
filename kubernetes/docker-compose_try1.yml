@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    web:
+        build: .
+        ports:
+        - "5000:5000"
+        volumes:
+        - .:/rvstore
+        links:
+        - redis
+    redis:
+        image: redis
