@@ -1,0 +1,149 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-ui-deployment
+  labels:
+    app: rvstore-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-ui
+  template:
+    metadata:
+      labels:
+        app: rvstore-ui
+    spec:
+      containers:
+      - name: rvstore-ui
+        image: vergeops/k8s-rvstore-ui:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-product-api-deployment
+  labels:
+    app: rvstore-product-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-product-api
+  template:
+    metadata:
+      labels:
+        app: rvstore-product-api
+    spec:
+      containers:
+      - name: rvstore-product-api
+        image: vergeops/k8s-rvstore-product-api:1.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: workload-config
+        ports:
+        - containerPort: 9001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-order-api-deployment
+  labels:
+    app: rvstore-order-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-order-api
+  template:
+    metadata:
+      labels:
+        app: rvstore-order-api
+    spec:
+      containers:
+      - name: rvstore-order-api
+        image: vergeops/k8s-rvstore-order-api:1.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: workload-config
+        ports:
+        - containerPort: 9002
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-order-sim-deployment
+  labels:
+    app: rvstore-order-sim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-order-sim
+  template:
+    metadata:
+      labels:
+        app: rvstore-order-sim
+    spec:
+      containers:
+      - name: rvstore-order-simulator
+        image: vergeops/k8s-rvstore-order-simulator:1.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: workload-config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-api-gateway-deployment
+  labels:
+    app: rvstore-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-api-gateway
+  template:
+    metadata:
+      labels:
+        app: rvstore-api-gateway
+    spec:
+      containers:
+      - name: rvstore-api-gateway
+        image: vergeops/k8s-rvstore-api-gateway:1.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: workload-config
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rvstore-orders-mongodb-deployment
+  labels:
+    app: rvstore-orders-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rvstore-orders-mongodb
+  template:
+    metadata:
+      labels:
+        app: rvstore-orders-mongodb
+    spec:
+      containers:
+      - name: rvstore-orders-mongodb
+        image: mongo
+        envFrom:
+        - configMapRef:
+            name: mongodb-config
+        ports:
+        - containerPort: 27017
+

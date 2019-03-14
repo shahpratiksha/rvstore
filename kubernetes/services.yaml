@@ -1,0 +1,72 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-ui 
+spec:
+  selector:
+    app: rvstore-ui
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30080
+  type: NodePort
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-product-api
+spec:
+  selector:
+    app: rvstore-product-api
+  ports:
+  - protocol: TCP
+    port: 9001
+  type: ClusterIP 
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-order-api
+spec:
+  selector:
+    app: rvstore-order-api
+  ports:
+  - protocol: TCP
+    port: 9002
+    nodePort: 30050
+  type: NodePort 
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-order-sim
+spec:
+  selector:
+    app: rvstore-order-sim
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-orders-mongodb 
+spec:
+  type: ClusterIP
+  selector:
+    app: rvstore-orders-mongodb
+  ports:
+  - protocol: TCP
+    port: 27017
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-api-gateway
+spec:
+  type: NodePort
+  selector:
+    app: rvstore-api-gateway
+  ports:
+  - protocol: TCP
+    port: 9000
+    nodePort: 30090
+
